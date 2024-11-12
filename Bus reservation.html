@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bus Reservation System</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styling */
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #00c6ff, #0072ff); /* Blue gradient */
+            color: white;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 850px;
+            width: 100%;
+            padding: 40px;
+            background: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+            border-radius: 15px;
+            position: relative;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+
+        /* Title */
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            font-weight: bold;
+            color: #f1f1f1;
+        }
+
+        /* Form Elements Styling */
+        form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        label {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: white;
+        }
+
+        select, input[type="text"], input[type="number"] {
+            padding: 12px;
+            font-size: 16px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            border: none;
+            margin: 10px 0;
+            outline: none;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 18px;
+            cursor: pointer;
+            border: none;
+            transition: background-color 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        /* Background Image in Form */
+        .form-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://www.example.com/bus-image.jpg'); /* Replace with your bus image URL */
+            background-size: cover;
+            background-position: center;
+            opacity: 0.2;
+            border-radius: 15px;
+            z-index: -1; /* Keeps the image behind the form elements */
+        }
+
+        /* Footer */
+        footer {
+            font-size: 14px;
+            color: white;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Background Image Inside the Form -->
+        <div class="form-background"></div>
+
+        <h1>Bus Reservation System</h1>
+        <form action="/submit" method="POST">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+            <label for="route">Select Bus Route:</label>
+            <select id="route" name="route" required>
+                <option value="city1-city2">City 1 to City 2</option>
+                <option value="city2-city3">City 2 to City 3</option>
+                <option value="city1-city3">City 1 to City 3</option>
+            </select>
+
+            <label for="time">Departure Time:</label>
+            <select id="time" name="time" required>
+                <option value="9am">9:00 AM</option>
+                <option value="12pm">12:00 PM</option>
+                <option value="3pm">3:00 PM</option>
+                <option value="6pm">6:00 PM</option>
+            </select>
+
+            <label for="seats">Number of Seats:</label>
+            <input type="number" id="seats" name="seats" min="1" max="10" required>
+
+            <input type="submit" value="Reserve Now">
+        </form>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Bus Reservation System. All rights reserved.</p>
+    </footer>
+</body>
+</html>
